@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory2!</title>
+    <style>
+        .item{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="item" onclick="addToInventory(this)"><img src="Apple.png"></div>
+    <div class="item" onclick="addToInventory(this)"><img src="Pizza.jpg"></div>
+    <div class="item" onclick="addToInventory(this)"><img src="UFO.jpg"></div>
+
+    <button onclick="showHideInventory()">Inventory</button>
+    <div style="display: none;" id="inventory" >TEST</div>
+
+<script>
+    let inventoryDiv = document.getElementById('inventory');
+
+//kortversjon, uten bruk av return & ekstra lagringsvariabel
+    function addToInventory(clickedItem){
+        inventoryDiv.innerHTML += clickedItem.innerHTML;
+    }
+
+   function showHideInventory(){
+    if(inventoryDiv.style.display == 'none'){
+        inventoryDiv.style.display = 'block'
+    }
+    else{
+        inventoryDiv.style.display = 'none' 
+    }
+
+    //Ternary operator - om en verdi skal være enten det ene eller det andre
+    // inventoryDiv.style.display == 'none' ?  
+    // inventoryDiv.style.display = 'block' :  
+    // inventoryDiv.style.display = 'none'
+
+      
+   }
+
+</script>
+</body>
+</html>

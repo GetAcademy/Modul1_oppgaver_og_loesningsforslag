@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory!</title>
+    <style>
+        .item{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="item" onclick="addToInventory(this)"><img src="Apple.png"></div>
+    <div class="item" onclick="addToInventory(this)"><img src="Pizza.jpg"></div>
+    <div class="item" onclick="addToInventory(this)"><img src="UFO.jpg"></div>
+<br>
+    <button style="clear:right" onclick="showInventory()">Inventory</button>
+<br>
+    <div id="inventory"></div>
+
+<script>
+    const inventoryDiv = document.getElementById('inventory');
+    let inventory = "";
+
+    function addToInventory(clickedItem){
+        inventory += clickedItem.innerHTML;
+    }
+
+    //bare for å få brukt en return ;P
+    function showInventory(){
+        inventoryDiv.innerHTML = getInventoryContents();
+    }
+
+    function getInventoryContents(){
+        return inventory;
+    }
+
+</script>
+</body>
+</html>
